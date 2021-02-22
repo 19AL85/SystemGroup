@@ -102,8 +102,6 @@ namespace SystemGroup.TokenIssuerServer.Controllers
         [Route("refresh")]
         public IActionResult Refresh([FromBody] RefreshRequest refreshRequest)
         {
-            if (!ModelState.IsValid)
-                return BadRequest("bla-bla-bla");
 
             bool isValid = _jwtTokenValidator.IsRefreshTokenValid(refreshRequest.RefreshToken);
 
